@@ -1,43 +1,48 @@
 using System;
+using System.Collections;
 using Runner.Core;
 using UnityEngine;
 
 namespace Runner.Game
 {
     [RequireComponent(typeof(Rigidbody))]
-    class PlayerAvatar : MonoBehaviour
+    class PlayerAvatar : MonoBehaviour, IGameProgress
     {
-        public event Action OnDeath;
-        public event Action OnCoinHit;
+        public event Action OnDeath, OnCoinHit;
 
+        //todo: SerializeField with character model. change animations of it
+        [SerializeField] string runAnimName, deathAnimName, waitAnimName;
+        
         float currentSpeed;
         new Rigidbody rigidbody;
         int currentTrackNumber;
         IPlayerInput input;
         
         public bool IsAlive { get; private set; }
+
+        public float Distance => transform.position.z;
         Vector3 Velocity => new Vector3(0, 0, currentSpeed);
 
-        public void Init() {
+        public IEnumerator Init() {
             rigidbody = GetComponent<Rigidbody>(); // the mode is set to Kinematic
             input     = Services.Get<IPlayerInput>();
             IsAlive   = true;
-            Restart();
+            yield return Restart(); 
         }
         
-        public void Restart() {
+        public IEnumerator Restart() {
             currentSpeed = Configuration.INITIAL_SPEED;
             rigidbody.MovePosition(Vector3.zero);
             currentTrackNumber = Configuration.DEFAULT_TRACK_INDEX;
             IsAlive            = true;
+            yield break; // todo: delay on start
         }
 
         void OnCollisionEnter(Collision other) {
             var spawned = other.gameObject.GetComponent<IObjectOnTrack>();
             if (spawned == null) return;
             
-            spawned.Hit();
-            switch (spawned.Type) {
+            switch (spawned.GetObjectType()) {
                 case ObjectType.Coin: 
                     OnCoinHit?.Invoke();
                     break;

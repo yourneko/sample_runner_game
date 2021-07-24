@@ -8,20 +8,20 @@ namespace Runner.Core
     /// <summary>Loads and initializes scenes.</summary>
     public class AppManager : MonoBehaviour
     {
-        [SerializeField, Tooltip("A name of the Menu scene")] 
-        string defaultSceneName;
+        public const string MAIN_MENU_SCENE_NAME = "MainMenuScene";
+        public const string GAME_SCENE_NAME = "GameScene";
 
         IGameState currentState;
         /// <summary>TRUE while loading the scene. Do not touch the manager while it's TRUE.</summary>
         public bool IsBusy { get; private set; }
-        
+
         void Start() {
             DontDestroyOnLoad(this);
             // Starting app scope services
             Services.Register(this);
             //Services.Register(new HighScores()); // i swear, that's IUserDataProvider
             
-            StartCoroutine(LoadSceneCoroutine(defaultSceneName, false));
+            StartCoroutine(LoadSceneCoroutine(MAIN_MENU_SCENE_NAME, false));
         }
 
         /// <summary>Unloads a current scene. Loads a new scene. Initializes the IGameState of the loaded scene.</summary>
@@ -36,7 +36,7 @@ namespace Runner.Core
             // But I don't want to add the loading screen there, it will go down too fast.  
             IsBusy = true;
             if (unloadCurrent) 
-                yield return currentState.Exit();
+                yield return currentState.ExitRoutine();
             
             yield return SceneManager.LoadSceneAsync(name, LoadSceneMode.Single);
             var rootGameObjects = SceneManager.GetActiveScene().GetRootGameObjects();
@@ -45,7 +45,7 @@ namespace Runner.Core
             while ((currentState = rootGameObjects[index].GetComponentInChildren<IGameState>()) != null)
                 index += 1; 
 
-            yield return currentState.Init();   
+            yield return currentState.InitRoutine();   
             IsBusy = false;
         }
     }

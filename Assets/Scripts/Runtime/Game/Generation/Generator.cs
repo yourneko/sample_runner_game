@@ -20,13 +20,18 @@ namespace Runner.Game
         ObjectPool pool;
         int currentBlockIndex;
         int currentItemRowIndex;
+        IGameProgress progressProvider;
+        bool initialized;
 
         public void Init() {
-            objectSelector = new ObjectSelector(Configuration.ObjectSpawnSequences);
-            blockSelector  = new BlockSelector(blocksData.Data);
-            pool           = Services.Get<ObjectPool>();
-            // todo: send cached prefabs to pool
-            Preload();
+            objectSelector   = new ObjectSelector(Configuration.ObjectSpawnSequences);
+            blockSelector    = new BlockSelector(blocksData.Data);
+            progressProvider = Services.Get<IGameProgress>();
+            pool             = Services.Get<ObjectPool>();
+            foreach (var element in blocksData.LocationElements) 
+                pool.PreloadObjects(element, 1);
+            PreloadLocation();
+            initialized = true;
         }
 
         public void Restart() {
@@ -37,13 +42,15 @@ namespace Runner.Game
             currentBlockIndex = 0;
             objectSelector.Reset();
             blockSelector.Reset();
-            Preload();
+            PreloadLocation();
         }
 
-        public void OnDistanceReached(float positionZ) {
-            if (blocks.Peek().Position < positionZ + Configuration.UNLOAD_DISTANCE)
+        void Update() {
+            if (!initialized)return;
+            
+            if (blocks.Peek().Position < progressProvider.Distance + Configuration.UNLOAD_DISTANCE)
                 blocks.Dequeue().ReleaseBlock();
-            if (currentBlockIndex * Configuration.BLOCK_LENGTH < positionZ + Configuration.PRELOAD_DISTANCE)
+            if (currentBlockIndex * Configuration.BLOCK_LENGTH < progressProvider.Distance + Configuration.PRELOAD_DISTANCE)
                 GenerateBlock();
         }
 
@@ -62,7 +69,7 @@ namespace Runner.Game
             }
         }
 
-        void Preload() {
+        void PreloadLocation() {
             for (int i = 0; i < Configuration.PRELOAD_ON_START_COUNT; i++)
                 GenerateBlock();
         }

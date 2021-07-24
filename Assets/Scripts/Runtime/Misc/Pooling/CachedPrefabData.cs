@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 namespace Runner.Misc
 {
+    [Serializable]
     public readonly struct CachedPrefabData
     {
         public readonly int PoolID;

@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Runner.Game
 {
     // all these parameters are expected to be more editable and accessible, but...
@@ -27,6 +29,8 @@ namespace Runner.Game
         public const string LOCATION_BLOCK_PREFABS_PATH = "Assets/Prefabs/Blocks/";
         public const string BLOCK_ELEMENTS_PREFABS_PATH = "Assets/Prefabs/Elements/";
 
+        public static readonly Vector3 CoinDisappearanceTranslation = new Vector3(0, 1000); // Collected coins are moved upwards to disappear
+        
         public static readonly int[][] ObjectSpawnSequences = {
                                                                   new[] {0} //todo: create some data
                                                               };
