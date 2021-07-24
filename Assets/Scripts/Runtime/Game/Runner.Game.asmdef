@@ -1,0 +1,17 @@
+{
+    "name": "Runner.Game",
+    "rootNamespace": "",
+    "references": [
+        "GUID:954f0498b693b3b46b41243a8bf69f1c",
+        "GUID:95a290020df77dd44ae228384ea3fe27"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
