@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Runner.Core;
 using Runner.Misc;
 using UnityEngine;
 
@@ -20,10 +21,23 @@ namespace Runner.Game
         int currentBlockIndex;
         int currentItemRowIndex;
 
-        public void Init(ObjectPool objectPool) {
+        public void Init() {
             objectSelector = new ObjectSelector(Configuration.ObjectSpawnSequences);
             blockSelector  = new BlockSelector(blocksData.Data);
-            pool           = objectPool;
+            pool           = Services.Get<ObjectPool>();
+            // todo: send cached prefabs to pool
+            Preload();
+        }
+
+        public void Restart() {
+            foreach (var block in blocks)
+                block.ReleaseBlock();
+            blocks.Clear();
+
+            currentBlockIndex = 0;
+            objectSelector.Reset();
+            blockSelector.Reset();
+            Preload();
         }
 
         public void OnDistanceReached(float positionZ) {
@@ -48,15 +62,7 @@ namespace Runner.Game
             }
         }
 
-        void Reset() {
-            foreach (var block in blocks)
-                block.ReleaseBlock();
-            blocks.Clear();
-
-            currentBlockIndex = 0;
-            objectSelector.Reset();
-            blockSelector.Reset();
-
+        void Preload() {
             for (int i = 0; i < Configuration.PRELOAD_ON_START_COUNT; i++)
                 GenerateBlock();
         }

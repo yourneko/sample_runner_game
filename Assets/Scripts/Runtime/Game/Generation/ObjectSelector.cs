@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Runner.Misc;
 using UnityEngine;
 
 namespace Runner.Game

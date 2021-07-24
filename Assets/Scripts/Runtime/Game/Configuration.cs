@@ -1,5 +1,3 @@
-using System;
-
 namespace Runner.Game
 {
     // all these parameters are expected to be more editable and accessible, but...
@@ -25,12 +23,12 @@ namespace Runner.Game
         public const float MAX_SPEED = 50f;
         public const float ASYMPTOTIC_SPEED_GAIN_PER_FRAME = 0.0001f;
 
-        public static readonly int[][] ObjectSpawnSequences = {
-                                                                  new[] {0} //todo: write
-                                                              };
-
         public const string CACHED_BLOCKS_DATA_NAME = "CachedBlocksData";
         public const string LOCATION_BLOCK_PREFABS_PATH = "Assets/Prefabs/Blocks/";
         public const string BLOCK_ELEMENTS_PREFABS_PATH = "Assets/Prefabs/Elements/";
+
+        public static readonly int[][] ObjectSpawnSequences = {
+                                                                  new[] {0} //todo: create some data
+                                                              };
     }
 }
