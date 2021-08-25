@@ -1,0 +1,17 @@
+{
+    "name": "Runner.Menu",
+    "rootNamespace": "",
+    "references": [
+        "Runner",
+        "Runner.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

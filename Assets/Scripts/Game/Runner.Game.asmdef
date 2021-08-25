@@ -1,0 +1,17 @@
+{
+    "name": "Runner.Game",
+    "rootNamespace": "Runner.Game",
+    "references": [
+        "Runner",
+        "Runner.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
