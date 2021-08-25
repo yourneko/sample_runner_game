@@ -63,6 +63,7 @@ namespace Runner.Game
         void GenerateNextBlock() {
             var block = pool.GetCopy(blockPrefab);
             var spawnedBlock = block.Target.GetComponent<SpawnedBlock>();
+            spawnedBlock.transform.SetParent(transform);
             spawnedBlock.SetPosition(currentBlockIndex, block.Dispose);
             blocks.Enqueue(spawnedBlock);
 

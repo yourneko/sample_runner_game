@@ -17,6 +17,7 @@ namespace Runner.Game
             EditorUtility.SetDirty(data);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
+            Debug.Log("Cached prefab data was updated.");
         }
 
         static CachedPooledObjectsData GetCachedData() {

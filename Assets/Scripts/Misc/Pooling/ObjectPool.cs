@@ -14,6 +14,7 @@ namespace Runner
             storedObjects = new GameObject().transform;
             storedObjects.SetParent(transform);
             storedObjects.position = Vector3.zero;
+            storedObjects.gameObject.SetActive(false);
             ServiceProvider.Register(this);
         }
 

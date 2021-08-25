@@ -23,7 +23,7 @@ namespace Runner.Game
 
         public const float INITIAL_SPEED = 50f;
         public const float MAX_SPEED = 200f;
-        public const float ASYMPTOTIC_SPEED_GAIN_PER_FRAME = 0.0002f;
+        public const float ASYMPTOTIC_SPEED_GAIN_PER_FRAME = 0.0004f;
 
         public const string CACHED_BLOCKS_DATA_NAME = "Assets/CachedBlocksData.asset";
         public const string LOCATION_BLOCK_PREFABS_PATH = "Assets/Prefabs/Blocks/";

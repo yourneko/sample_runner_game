@@ -7,7 +7,7 @@ namespace Runner.Menu
     {
         const string SELECTED_FRACTION_PLAYER_PREFS_ID = "SelectedFraction";
         
-        [SerializeField] GameObject leftSelected, rightSelected;
+        [SerializeField] GameObject[] leftSelected, rightSelected;
         [SerializeField] Button selectLeftBtn, selectRightBtn;
         int fraction;
         bool changed;
@@ -28,8 +28,10 @@ namespace Runner.Menu
 
         void SelectFraction(int f) {
             fraction = f;
-            leftSelected.SetActive(fraction == -1);
-            rightSelected.SetActive(fraction == 1);
+            foreach (var leftVisuals in leftSelected)
+                leftVisuals.SetActive(fraction == -1);
+            foreach (var rightVisuals in rightSelected)
+                rightVisuals.SetActive(fraction == 1);
             selectLeftBtn.gameObject.SetActive(fraction != -1);
             selectRightBtn.gameObject.SetActive(fraction != 1);
         }

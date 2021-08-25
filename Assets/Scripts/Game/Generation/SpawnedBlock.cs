@@ -17,7 +17,7 @@ namespace Runner.Game
         public void SetPosition(int blockIndex, Action disposeAction) {
             index              = blockIndex;
             returnToPoolAction = disposeAction;
-            transform.Translate(new Vector3(0, 0, Configuration.BLOCK_LENGTH * index));
+            transform.Translate(new Vector3(0, 0, Configuration.BLOCK_LENGTH * index - Position));
             if (pool == null)
                 pool = ServiceProvider.Get<ObjectPool>();
         }

@@ -23,7 +23,7 @@ namespace Runner.Game
         public float Distance => transform.position.z;
 
         public IEnumerator Init() {
-            rigidbody = GetComponent<Rigidbody>(); // mode is expected to be set to Kinematic
+            rigidbody = GetComponent<Rigidbody>();
             input     = ServiceProvider.Get<IPlayerInput>();
             yield return Restart();
         }
@@ -36,7 +36,6 @@ namespace Runner.Game
             modelAnimator.SetBool(aliveStateID, true); // default state
             yield return new WaitForSeconds(1);        // this represents a delay required for initial animation
             modelAnimator.SetBool(runStateID, true); // running state
-            Debug.Log("avatar restarted");
         }
         
         void OnCollisionEnter(Collision other) {

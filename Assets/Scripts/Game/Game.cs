@@ -52,7 +52,6 @@ namespace Runner.Game
             gameUI.SetMode(UI.Mode.Playing);
             locationGenerator.Restart();
             yield return player.Restart();
-            Debug.LogError("restarted");
         }
         
         void OnPlayerDied() {
