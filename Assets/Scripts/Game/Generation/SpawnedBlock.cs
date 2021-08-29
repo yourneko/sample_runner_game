@@ -37,7 +37,9 @@ namespace Runner.Game
             if (pool.TryGetByHash(objHash, out var result)) {
                 pooled.Add(result);
                 result.Target.transform.SetParent(transform);
-                var localPos = new Vector3(Configuration.GetTrackPosX(track), 0, (line - Configuration.OBJECT_LINES_IN_BLOCK) * Configuration.DISTANCE_BETWEEN_OBJECT_ROWS);
+                var localPos = new Vector3((track - Configuration.DEFAULT_TRACK_INDEX) * Configuration.TRACK_WIDTH,
+                                           0,
+                                           (line - Configuration.OBJECT_LINES_IN_BLOCK) * Configuration.DISTANCE_BETWEEN_OBJECT_ROWS);
                 SetChildLocalPosition(result.Target.transform, localPos);
             }
         }
@@ -49,6 +51,6 @@ namespace Runner.Game
             returnToPoolAction.Invoke();
         }
 
-        void SetChildLocalPosition(Transform target, Vector3 pos) => target.localPosition = pos; //.Translate(pos + transform.position - target.position);
+        static void SetChildLocalPosition(Transform target, Vector3 pos) => target.localPosition = pos;
     }
 }

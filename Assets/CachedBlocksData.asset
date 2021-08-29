@@ -13,308 +13,633 @@ MonoBehaviour:
   m_Name: CachedBlocksData
   m_EditorClassIdentifier: 
   locationElements:
+  - {fileID: 1419247192797884084, guid: 5a8bf5a95ed95914d92392a1917fe149, type: 3}
+  - {fileID: 113604, guid: 08a5f3a4f1a5afa47b54e6eddc350ddc, type: 3}
+  - {fileID: 155586, guid: 4824839bd071a8147b3efd7538332d29, type: 3}
+  - {fileID: 110040, guid: 0051796fd9b1ab54fbd13fdf8d2cd2bb, type: 3}
   - {fileID: 5548456037867278277, guid: 4a6e4d570d4fcad4493b324f17bbd452, type: 3}
+  - {fileID: 5548456037867278277, guid: 48972cc1ccd5e65469abf906ff63b412, type: 3}
+  - {fileID: 197442, guid: 9a8e2ad0cc8923746b7b5ef3f7c34059, type: 3}
+  - {fileID: 187202, guid: 10efb94c6bff2ac4ead891c26d371ef4, type: 3}
   - {fileID: 112080, guid: 7f58309ce166972478cee4c83a1c91cd, type: 3}
-  - {fileID: 1846208716538333030, guid: 30de34a35a4305c4498f476c8678d541, type: 3}
   - {fileID: 3152954606340538895, guid: 92b9500dcd2ea724780127ee172ee9a7, type: 3}
+  - {fileID: 292462034410377177, guid: 3d5049595c58704428d80af53a7ccb83, type: 3}
   - {fileID: 6592526923072191675, guid: 308803aad978b3c48a7a7174dc84ef86, type: 3}
   - {fileID: 5130029478089651992, guid: 189a0b5ee84cb454e98d2835383607d1, type: 3}
-  - {fileID: 5564983022489243425, guid: 4de75b156eca74e4cb387cb66d846bca, type: 3}
-  - {fileID: 5322093474552579706, guid: 76127311a732f7f4683e127ce2d794b5, type: 3}
   - {fileID: 7718196877719149443, guid: d76604d888e1f2e4a9ea00687d223934, type: 3}
   - {fileID: 3855868508848879697, guid: 6a3bea1dd0263bf43861bde07f3af72f, type: 3}
+  - {fileID: 6539010581056835241, guid: ead76e3a9a32299448dfa6d8122b482e, type: 3}
   - {fileID: 7728408873537295740, guid: 43f3a30843187d742a34fc97bc13847c, type: 3}
   - {fileID: 100000, guid: 0a751c0923fc3f24f952213735c8a36d, type: 3}
+  - {fileID: 4303203432193477217, guid: 61155ddd984b5aa46926e5e31186b83a, type: 3}
   data:
-  - location: C
+  - location: H
     blocks:
-    - name: C 1
+    - name: H 1
       data:
       - poolID: Ground
         position: {x: 0, y: 0, z: -250}
         rotation: {x: 0, y: 0, z: 0, w: 1}
-        scale: {x: 100, y: 1, z: 49.7702}
-      - poolID: SM_Sandbox_01
-        position: {x: -100.7, y: 54, z: -265}
-        rotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+        scale: {x: 50, y: 1, z: 50}
+      - poolID: Ground
+        position: {x: -439, y: 106, z: -250}
+        rotation: {x: 0, y: 0, z: -0.258819, w: 0.9659259}
+        scale: {x: 50, y: 1, z: 50}
+      - poolID: Ground
+        position: {x: 444, y: 104, z: -250}
+        rotation: {x: 0, y: 0, z: 0.2588191, w: 0.9659258}
+        scale: {x: 50, y: 1, z: 50}
+      - poolID: SM_Tree_03
+        position: {x: -135.3, y: -167.6, z: -443.7}
+        rotation: {x: 0.000000051143036, y: -0.64026344, z: -0.00000004262812, w: 0.7681554}
         scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Toy_02
-        position: {x: -93.866325, y: 46.174675, z: -416.21637}
-        rotation: {x: 0.7231241, y: 0.47026992, z: -0.46746498, w: 0.19342782}
-        scale: {x: 100, y: 100, z: 100}
-      - poolID: SM_Stand_02
-        position: {x: -93.6, y: -3.3, z: -38.3}
-        rotation: {x: 0.000000019128278, y: -0.48374677, z: -0.000000010572623, w: 0.875208}
-        scale: {x: 100, y: 100, z: 100}
-      - poolID: Refrigerator_2
-        position: {x: 125.87808, y: 41.8809, z: -436.2584}
-        rotation: {x: -0.60518986, y: -0.61284506, z: -0.3615323, w: -0.3570162}
-        scale: {x: 1000, y: 1000, z: 1000}
-      - poolID: Stud Frame
-        position: {x: -167.1, y: 43.4, z: -425.8}
-        rotation: {x: 0, y: 0, z: 0, w: 1}
+      - poolID: SM_Tree_03
+        position: {x: -125.3, y: -167.5, z: -271.2}
+        rotation: {x: -0, y: 0.8861922, z: -0, w: 0.46331784}
+        scale: {x: 50, y: 50, z: 50}
+      - poolID: SM_Tree_03
+        position: {x: -283.1, y: -55.4, z: -164.2}
+        rotation: {x: 0.000000059368197, y: 0.000000030136086, z: -0.4526363, w: 0.8916952}
+        scale: {x: 40, y: 40, z: 50}
+      - poolID: SM_Tree_03
+        position: {x: -103.5, y: -164.4, z: -35.1}
+        rotation: {x: -0.07280868, y: 0.9852677, z: -0.011404262, w: 0.15432571}
+        scale: {x: 50, y: 50, z: 50}
+      - poolID: SM_Tree_03
+        position: {x: 82.2, y: -160.3, z: -388.7}
+        rotation: {x: -0.061760414, y: 0.48908108, z: -0.16619146, w: 0.8540292}
+        scale: {x: 50, y: 50, z: 50}
+      - poolID: SM_Tree_03
+        position: {x: 53.2, y: -197.3, z: -358.6}
+        rotation: {x: -0.02169639, y: -0.47419947, z: -0.18448737, w: 0.8605977}
+        scale: {x: 60, y: 60, z: 50}
+      - poolID: SM_Tree_03
+        position: {x: 161.05658, y: -192.5, z: -138.58266}
+        rotation: {x: 0.0000000032682184, y: 0.9987945, z: 0.00000006649878, w: 0.049087808}
+        scale: {x: 50, y: 50, z: 50}
+      - poolID: SM_Tree_03
+        position: {x: 43.802208, y: -123.69775, z: -16.162327}
+        rotation: {x: 0.26652133, y: 0.5683438, z: 0.12496651, w: -0.7683327}
         scale: {x: 40, y: 40, z: 40}
-      - poolID: SM_Toy_02
-        position: {x: -91.651375, y: 46.50629, z: -416.28687}
-        rotation: {x: 0.2025668, y: 0.229387, z: -0.6333396, w: 0.71079487}
-        scale: {x: 100, y: 100, z: 100}
+    - name: H 2
+      data:
+      - poolID: Ground
+        position: {x: 0, y: 0, z: -250}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        scale: {x: 50, y: 1, z: 50}
+      - poolID: Ground
+        position: {x: -439, y: 106, z: -250}
+        rotation: {x: 0, y: 0, z: -0.258819, w: 0.9659259}
+        scale: {x: 50, y: 1, z: 50}
+      - poolID: Ground
+        position: {x: 444, y: 104, z: -250}
+        rotation: {x: 0, y: 0, z: 0.2588191, w: 0.9659258}
+        scale: {x: 50, y: 1, z: 50}
+      - poolID: SM_Tree_01
+        position: {x: -91.6, y: -1, z: -47.7}
+        rotation: {x: 0.00000006657903, y: -0, z: -0, w: 1}
+        scale: {x: 40, y: 35, z: 40}
+      - poolID: SM_Tree_01
+        position: {x: -121.7, y: -47, z: -142}
+        rotation: {x: 0.00000006657903, y: -0, z: -0, w: 1}
+        scale: {x: 30, y: 30, z: 30}
+      - poolID: SM_Tree_01
+        position: {x: -130.5, y: -46.7, z: -439}
+        rotation: {x: 0.00000006657903, y: -0, z: -0, w: 1}
+        scale: {x: 40, y: 40, z: 40}
+      - poolID: CoffeTable_1
+        position: {x: -85.9, y: -0.000015735626, z: -212}
+        rotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+        scale: {x: 1800, y: 700, z: 1000}
+      - poolID: CoffeTable_1
+        position: {x: -86.6656, y: 0, z: -351.9}
+        rotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+        scale: {x: 1800, y: 700, z: 1000}
+      - poolID: SM_Lamp_01
+        position: {x: -87, y: -0.4, z: -491.9}
+        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+        scale: {x: 40, y: 40, z: 40}
+      - poolID: SM_Lamp_01
+        position: {x: -87, y: -0.4, z: -280}
+        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+        scale: {x: 40, y: 40, z: 40}
+      - poolID: SM_Lamp_01
+        position: {x: -87, y: -0.4, z: -93.2}
+        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+        scale: {x: 40, y: 40, z: 40}
+      - poolID: SM_Tree_01
+        position: {x: -180.9, y: -20.7, z: -250}
+        rotation: {x: 0.00000006657903, y: -0, z: -0, w: 1}
+        scale: {x: 50, y: 30, z: 50}
+      - poolID: Wall
+        position: {x: 1076.4497, y: 5.207, z: -499.5988}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        scale: {x: 89.674095, y: 7.8827863, z: 2696.8838}
+      - poolID: SM_Lamp_01
+        position: {x: 89.6, y: 1, z: -491.9}
+        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+        scale: {x: 40, y: 40, z: 30}
+      - poolID: SM_Lamp_01
+        position: {x: 89.6, y: 1, z: -218.7}
+        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+        scale: {x: 40, y: 40, z: 40}
+      - poolID: Wall_1
+        position: {x: 913.0793, y: 236.4111, z: -499.599}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        scale: {x: 71.35446, y: 219.4576, z: 2316.6987}
+      - poolID: BlackWall
+        position: {x: 122.3, y: 84.2, z: -281}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        scale: {x: 0.5, y: 75.588875, z: 267.37216}
+      - poolID: CoffeTable_1
+        position: {x: 94.625305, y: 2.2, z: -442.5}
+        rotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+        scale: {x: 692.27515, y: 1324.3743, z: 2001.589}
       - poolID: toilet1
-        position: {x: -141.1, y: 35.6, z: -379.3}
+        position: {x: 90.700005, y: 20.7, z: -473.8}
+        rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+        scale: {x: 80, y: 80, z: 80}
+      - poolID: toilet1
+        position: {x: 90.9, y: 20.7, z: -410.6}
+        rotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
+        scale: {x: 80, y: 80, z: 80}
+      - poolID: CoffeTable_1
+        position: {x: 94.625305, y: 2.2, z: -343.69998}
+        rotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+        scale: {x: 692.27515, y: 1324.3743, z: 2001.589}
+      - poolID: toilet1
+        position: {x: 91.9, y: 20.7, z: -374.99997}
+        rotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+        scale: {x: 80, y: 80, z: 80}
+      - poolID: toilet1
+        position: {x: 92.4, y: 20.7, z: -311.8}
+        rotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
+        scale: {x: 80, y: 80, z: 80}
+      - poolID: Books_1_2
+        position: {x: 87.00001, y: 34.6, z: -341.8}
+        rotation: {x: -0.6689195, y: -0.22923079, z: -0.22923079, w: 0.6689195}
+        scale: {x: 1200, y: 1200, z: -300}
+      - poolID: Books_1_2
+        position: {x: 98.700005, y: 34.3, z: -443.5}
+        rotation: {x: -0.70438325, y: -0.062002465, z: -0.06200246, w: 0.70438325}
+        scale: {x: 1200, y: 1200, z: -300}
+      - poolID: Books_1_2
+        position: {x: 116.9, y: 73.2, z: -286.6}
+        rotation: {x: -0.51379496, y: -0.48581347, z: 0.51379496, w: 0.48581347}
+        scale: {x: 1200, y: 4121.76, z: -300}
+      - poolID: SM_Sandbox_01
+        position: {x: 176.2, y: 9.3, z: -100.8}
+        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+        scale: {x: 60, y: 30, z: 60}
+      - poolID: SM_Tree_01
+        position: {x: 178.6, y: -1, z: -100}
+        rotation: {x: 0.00000006657903, y: -0, z: -0, w: 1}
+        scale: {x: 80, y: 70, z: 80}
+      - poolID: SM_Game_Stairs_01
+        position: {x: 178.6, y: 7.4, z: -49.4}
+        rotation: {x: -0, y: 0.072553314, z: -0, w: 0.9973645}
+        scale: {x: 40, y: 40, z: 40}
+  - location: W
+    blocks:
+    - name: W 1
+      data:
+      - poolID: Floor
+        position: {x: 0, y: 0, z: -250}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        scale: {x: 50, y: 1, z: 50}
+      - poolID: Refrigerator_2
+        position: {x: -219.1, y: -1.6000004, z: -183.5}
+        rotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+        scale: {x: 1800, y: 1800, z: 1800}
+      - poolID: Stud Frame
+        position: {x: -158.9634, y: 43.4, z: -396.2224}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        scale: {x: 44.329285, y: 40, z: 35.593533}
+      - poolID: Floor
+        position: {x: -438.8, y: 103.4, z: -241.1}
+        rotation: {x: 0, y: 0, z: -0.258819, w: 0.9659259}
+        scale: {x: 50, y: 1, z: 50}
+      - poolID: Floor
+        position: {x: 436.3, y: 109.4, z: -250}
+        rotation: {x: 0, y: 0, z: 0.2588191, w: 0.9659258}
+        scale: {x: 50, y: 1, z: 50}
+      - poolID: Wall
+        position: {x: -249.7001, y: 133, z: -2484.5288}
+        rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+        scale: {x: 222.95648, y: 122.17, z: 100}
+      - poolID: Wall
+        position: {x: 580.6393, y: 133, z: -8.8205}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        scale: {x: 73.566246, y: 122.17, z: 67.35}
+      - poolID: Stud Frame
+        position: {x: -156.3506, y: 43.4, z: -85.6}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        scale: {x: 44.003876, y: 40, z: 40}
+      - poolID: Wall
+        position: {x: 226.6, y: 133, z: -2484.5}
+        rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+        scale: {x: 222.95648, y: 122.17, z: 100}
+      - poolID: Wall
+        position: {x: 883.4404, y: 133, z: -8.8205}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        scale: {x: 72.37237, y: 122.17, z: 67.35}
+      - poolID: BlackWall
+        position: {x: 595.8645, y: 118.0948, z: -14.2}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        scale: {x: 44.65161, y: 76.05239, z: 30}
+      - poolID: toilet1
+        position: {x: 178.8, y: 25.5, z: -77.15494}
+        rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+        scale: {x: 120, y: 120, z: 120}
+      - poolID: toilet1
+        position: {x: 178.70491, y: 25.600002, z: -116}
+        rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+        scale: {x: 120, y: 120, z: 120}
+      - poolID: toilet1
+        position: {x: 178.8, y: 25.5, z: -155.2}
+        rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+        scale: {x: 120, y: 120, z: 120}
+      - poolID: toilet1
+        position: {x: 178.70491, y: 25.600002, z: -194.04506}
+        rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+        scale: {x: 120, y: 120, z: 120}
+      - poolID: CoffeTable_1
+        position: {x: 130.4, y: -1.4477, z: -139.2459}
+        rotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+        scale: {x: 3725.7378, y: 2059.2412, z: 2144.3787}
+      - poolID: CoffeTable_1
+        position: {x: 85.8, y: -1.4477, z: -129.8951}
+        rotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+        scale: {x: 3076.5996, y: 531.15216, z: 1200.397}
+      - poolID: GoldCoin
+        position: {x: 118.4, y: 33.6, z: -236}
+        rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+        scale: {x: 1000, y: 1000, z: 1000}
+      - poolID: GoldCoin
+        position: {x: 118.4, y: 36.4, z: -234.2}
+        rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+        scale: {x: 1000, y: 1000, z: 1000}
+      - poolID: GoldCoin
+        position: {x: 119.600006, y: 39.1, z: -236}
+        rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+        scale: {x: 1000, y: 1000, z: 1000}
+      - poolID: GoldCoin
+        position: {x: 131, y: 33.6, z: -241.09999}
+        rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+        scale: {x: 1000, y: 1000, z: 1000}
+      - poolID: toilet1
+        position: {x: 126.4, y: 39.4, z: -267.5}
+        rotation: {x: -0.5052526, y: 0.49469173, z: 0.4946916, w: 0.5052526}
+        scale: {x: 180, y: 180, z: 180}
+      - poolID: Wall_1
+        position: {x: 883.4404, y: 55.6833, z: -308.5}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        scale: {x: 72.37237, y: 51.421352, z: 39.29199}
+      - poolID: Stud Frame
+        position: {x: 153.6, y: 43.4, z: -405.6516}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        scale: {x: -41.160004, y: 40, z: 47.46582}
+      - poolID: Wall_2
+        position: {x: 565.6, y: 55.6833, z: -159}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        scale: {x: 72.37237, y: 51.421352, z: 39.29199}
+      - poolID: Wall_3
+        position: {x: 565.6, y: 55.6833, z: -332.8}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        scale: {x: 72.37237, y: 51.421352, z: 39.29199}
+      - poolID: SM_Sandbox_01
+        position: {x: -108.9, y: -0.6, z: -196.5}
+        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+        scale: {x: 20, y: 20, z: 20}
+      - poolID: SM_Toy_02
+        position: {x: -100.3, y: 31.7, z: -162.6}
+        rotation: {x: -0.5876729, y: -0.061558347, z: -0.02950518, w: 0.8062138}
+        scale: {x: 150, y: 150, z: 150}
+      - poolID: SM_Toy_02
+        position: {x: -116.9, y: 7.4, z: -216.1}
+        rotation: {x: -0.2323228, y: -0.76724315, z: 0.09782137, w: 0.5897416}
+        scale: {x: 150, y: 150, z: 150}
+      - poolID: SM_Toy_02
+        position: {x: -124.7, y: 28.5, z: -165.3}
+        rotation: {x: -0.52434313, y: -0.020059848, z: 0.026206812, w: 0.8508673}
+        scale: {x: 150, y: 150, z: 150}
+      - poolID: CoffeTable_1
+        position: {x: -135.2, y: -1.4, z: -304.1}
+        rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+        scale: {x: 2698.9243, y: 2059.2412, z: 2144.3787}
+      - poolID: Kitchen_Cabinet_1
+        position: {x: -220, y: -12.8, z: -201.7}
+        rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+        scale: {x: 24, y: 20, z: 25}
+      - poolID: toilet1
+        position: {x: -144.7, y: 25.5, z: -393.4}
+        rotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
+        scale: {x: 120, y: 120, z: 120}
+      - poolID: toilet1
+        position: {x: -138.2, y: 25.5, z: -74.7}
+        rotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
+        scale: {x: 120, y: 120, z: 120}
+      - poolID: toilet1
+        position: {x: 147.6, y: 25.6, z: -373.5}
+        rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+        scale: {x: 120, y: 120, z: 120}
+      - poolID: toilet1
+        position: {x: 147.6, y: 25.599998, z: -412.3}
+        rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+        scale: {x: 120, y: 120, z: 120}
+      - poolID: SM_Tree_01
+        position: {x: -120.6, y: -3.7, z: -485.6}
+        rotation: {x: 0.00000006657903, y: -0, z: -0, w: 1}
+        scale: {x: 30, y: 30, z: 20}
+      - poolID: SM_Tree_02
+        position: {x: -206.64563, y: -3.7000003, z: -485.6}
+        rotation: {x: 0.00000006657903, y: -0, z: -0, w: 1}
+        scale: {x: 30, y: 30, z: 20}
+    - name: W 2
+      data:
+      - poolID: Floor
+        position: {x: 0, y: 0, z: -250}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        scale: {x: 50, y: 1, z: 50}
+      - poolID: Refrigerator_2
+        position: {x: -117.5, y: -0, z: -481.7}
+        rotation: {x: -0.007903448, y: -0.71421754, z: -0.6998184, w: -0.0092278095}
+        scale: {x: 1507.8, y: 744.72, z: 1200}
+      - poolID: Stud Frame
+        position: {x: 159.731, y: 43.4, z: -403.4619}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        scale: {x: -35.11305, y: 40, z: 51.88}
+      - poolID: SM_Archway_01
+        position: {x: -169.976, y: -1.5181999, z: -8.025499}
+        rotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
+        scale: {x: 43.31467, y: 40, z: 40}
+      - poolID: SM_Lamp_01
+        position: {x: 95.8, y: -14.6, z: -50}
+        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+        scale: {x: 30, y: 30, z: 30}
+      - poolID: SM_Lamp_01
+        position: {x: 95.8, y: -14.6, z: -80}
+        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+        scale: {x: 30, y: 30, z: 30}
+      - poolID: SM_Lamp_01
+        position: {x: 95.8, y: -14.6, z: -110}
+        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+        scale: {x: 30, y: 30, z: 30}
+      - poolID: SM_Lamp_01
+        position: {x: 95.8, y: -14.6, z: -140}
+        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+        scale: {x: 30, y: 30, z: 30}
+      - poolID: SM_Lamp_01
+        position: {x: 95.8, y: -14.6, z: -170}
+        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+        scale: {x: 30, y: 30, z: 30}
+      - poolID: SM_Lamp_01
+        position: {x: 95.8, y: -14.6, z: -200}
+        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+        scale: {x: 30, y: 30, z: 30}
+      - poolID: SM_Lamp_01
+        position: {x: 95.8, y: -14.6, z: -230}
+        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+        scale: {x: 30, y: 30, z: 30}
+      - poolID: SM_Lamp_01
+        position: {x: 95.8, y: -14.6, z: -260}
+        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+        scale: {x: 30, y: 30, z: 30}
+      - poolID: SM_Lamp_01
+        position: {x: 95.8, y: -14.6, z: -290}
+        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+        scale: {x: 30, y: 30, z: 30}
+      - poolID: Floor
+        position: {x: -438.8, y: 103.4, z: -241.1}
+        rotation: {x: 0, y: 0, z: -0.258819, w: 0.9659259}
+        scale: {x: 50, y: 1, z: 50}
+      - poolID: Floor
+        position: {x: 436.3, y: 109.4, z: -250}
+        rotation: {x: 0, y: 0, z: 0.2588191, w: 0.9659258}
+        scale: {x: 50, y: 1, z: 50}
+      - poolID: BlackWall
+        position: {x: 457.6231, y: 170.3818, z: -6.0254993}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        scale: {x: 62.14392, y: 122.17, z: 30}
+      - poolID: BlackWall
+        position: {x: 464.964, y: 40.7, z: -12.9}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        scale: {x: 62.8035, y: 3.4963613, z: 91.008}
+      - poolID: toilet1
+        position: {x: -116.1, y: 35.6, z: -457.7}
+        rotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+        scale: {x: 150, y: 150, z: 150}
+      - poolID: CoffeTable_1
+        position: {x: -116.0428, y: 0, z: -404.2}
+        rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
+        scale: {x: 1338.1842, y: 2012.7168, z: 4213.3203}
+      - poolID: toilet1
+        position: {x: -114.6, y: 35.6, z: -350.2}
+        rotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+        scale: {x: 150, y: 150, z: 150}
+      - poolID: CoffeTable_1
+        position: {x: -116.0428, y: 0, z: -294.3}
+        rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
+        scale: {x: 1338.1842, y: 2012.7168, z: 4213.3203}
+      - poolID: toilet1
+        position: {x: -114.6, y: 35.6, z: -240.29999}
+        rotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+        scale: {x: 150, y: 150, z: 150}
+      - poolID: CoffeTable_1
+        position: {x: -116.0428, y: 0, z: -179.3}
+        rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
+        scale: {x: 1338.1842, y: 2012.7168, z: 4213.3203}
+      - poolID: Refrigerator_2
+        position: {x: -214.5, y: 0, z: -481.7}
+        rotation: {x: -0.007903448, y: -0.71421754, z: -0.6998184, w: -0.0092278095}
+        scale: {x: 1507.8, y: 744.72, z: 1200}
+      - poolID: toilet1
+        position: {x: -213.1, y: 35.6, z: -457.7}
+        rotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+        scale: {x: 150, y: 150, z: 150}
+      - poolID: CoffeTable_1
+        position: {x: -213.04282, y: 0, z: -404.2}
+        rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
+        scale: {x: 1338.1842, y: 2012.7168, z: 4213.3203}
+      - poolID: toilet1
+        position: {x: -211.6, y: 35.6, z: -350.2}
+        rotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+        scale: {x: 150, y: 150, z: 150}
+      - poolID: CoffeTable_1
+        position: {x: -213.04282, y: 0, z: -294.3}
+        rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
+        scale: {x: 1338.1842, y: 2012.7168, z: 4213.3203}
+      - poolID: toilet1
+        position: {x: -211.6, y: 35.6, z: -240.29999}
+        rotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+        scale: {x: 150, y: 150, z: 150}
+      - poolID: CoffeTable_1
+        position: {x: -213.04282, y: 0, z: -179.3}
+        rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
+        scale: {x: 1338.1842, y: 2012.7168, z: 4213.3203}
+      - poolID: toilet1
+        position: {x: -209.6, y: 43, z: -76.9}
+        rotation: {x: 0.14529824, y: 0.6920177, z: 0.6920177, w: -0.14529821}
+        scale: {x: 250, y: 250, z: 200}
+      - poolID: SM_Toy_02
+        position: {x: -193.2, y: 84.4, z: -301.6}
+        rotation: {x: 0.20703247, y: -0.7175173, z: -0.6252254, w: -0.22671486}
+        scale: {x: 100, y: 100, z: 100}
+      - poolID: SM_Toy_02
+        position: {x: -102.5, y: 83.7, z: -293.9}
+        rotation: {x: 0.7103146, y: -0.13145867, z: -0.10946278, w: -0.682781}
+        scale: {x: 100, y: 100, z: 100}
+      - poolID: SM_Toy_02
+        position: {x: -238.6, y: 84.4, z: -402.5}
+        rotation: {x: 0.21447816, y: -0.60935414, z: -0.7435736, w: -0.17258371}
+        scale: {x: 100, y: 100, z: 100}
+      - poolID: SM_Toy_02
+        position: {x: -97.7, y: 66.5, z: -398.4}
+        rotation: {x: 0.97888595, y: 0.026948998, z: -0.20235862, w: -0.010355682}
+        scale: {x: 100, y: 100, z: 100}
+      - poolID: Books_1_2
+        position: {x: -115.8, y: 63.4, z: -168.5}
+        rotation: {x: -0.68127286, y: -0.18938684, z: -0.18938704, w: 0.68127275}
+        scale: {x: 2000, y: 2000, z: 2000}
+      - poolID: SM_Sandbox_01
+        position: {x: -165.192, y: 2.2, z: -321.5959}
+        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+        scale: {x: 54.635174, y: 28.56096, z: 112.76446}
+      - poolID: SM_Toy_02
+        position: {x: -214.4, y: 83.7, z: -171.8}
+        rotation: {x: 0.20703247, y: -0.7175173, z: -0.6252254, w: -0.22671486}
+        scale: {x: 100, y: 100, z: 100}
+      - poolID: SM_Toy_02
+        position: {x: -148.7, y: 52.6, z: -10.6}
+        rotation: {x: 0.5459738, y: -0.45227882, z: -0.5355239, w: 0.45887998}
+        scale: {x: 200, y: 200, z: 200}
+      - poolID: BookCase_2
+        position: {x: 164.3186, y: 0, z: -12.4}
+        rotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
+        scale: {x: 3996.928, y: 1500, z: 1500}
+      - poolID: BookCase_2
+        position: {x: 236.8, y: 0, z: -262.3506}
+        rotation: {x: 0.5, y: 0.5, z: 0.5, w: -0.5}
+        scale: {x: 14594.556, y: 1500, z: 1500}
+      - poolID: CoffeTable_1
+        position: {x: 136.9, y: 0, z: -125.9}
+        rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+        scale: {x: 688.0885, y: 3392.7634, z: 1684.0641}
+      - poolID: CoffeTable_1
+        position: {x: 152.3, y: -0, z: -269}
+        rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+        scale: {x: 688.0885, y: 3392.7634, z: 1684.0641}
+      - poolID: Books_1_2
+        position: {x: 140.7, y: 29.7, z: -116.2}
+        rotation: {x: -0.68127286, y: -0.18938684, z: -0.18938704, w: 0.68127275}
+        scale: {x: 2000, y: 2000, z: -500}
+      - poolID: GoldCoin
+        position: {x: -203.4, y: 21.400002, z: -10}
+        rotation: {x: 0.0376651, y: -0, z: -0, w: 0.99929047}
+        scale: {x: 1000, y: 1000, z: 1000}
+      - poolID: GoldCoin
+        position: {x: -215.5, y: 21.4, z: -10}
+        rotation: {x: 0.0376651, y: -0, z: -0, w: 0.99929047}
+        scale: {x: 1000, y: 1000, z: 1000}
+      - poolID: Wall
+        position: {x: -250.9002, y: 136.8, z: -2548.7783}
+        rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+        scale: {x: 228.8805, y: 122.17, z: 30}
+      - poolID: Wall
+        position: {x: 579.4076, y: 183.8405, z: -1.2}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        scale: {x: 74.265175, y: 166.43219, z: 30}
+    - name: W 3
+      data:
+      - poolID: Floor
+        position: {x: 0, y: 0, z: -250}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        scale: {x: 50, y: 1, z: 50}
+      - poolID: toilet1
+        position: {x: 98.2, y: 35.6, z: -129}
         rotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
         scale: {x: 150, y: 150, z: 150}
       - poolID: toilet1
-        position: {x: -138.9, y: 35.6, z: -474.8}
+        position: {x: 96.7, y: 35.6, z: -266.9}
         rotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
         scale: {x: 150, y: 150, z: 150}
-      - poolID: SM_Archway_01
-        position: {x: -9.2, y: -1.9, z: -14.7}
-        rotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Alcove_01
-        position: {x: 148, y: -0.7, z: -446.5}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Lamp_01
-        position: {x: 95.8, y: -2.4, z: -72.59999}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Lamp_01
-        position: {x: 95.8, y: -2.4, z: -100.09999}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Lamp_01
-        position: {x: 95.8, y: -2.4, z: -125.09999}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Lamp_01
-        position: {x: 95.8, y: -2.4, z: -150.59999}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Lamp_01
-        position: {x: 95.8, y: -2.4, z: -182.9}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Lamp_01
-        position: {x: 95.8, y: -2.4, z: -210}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Lamp_01
-        position: {x: 95.8, y: -2.4, z: -241.89998}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Lamp_01
-        position: {x: 95.8, y: -2.4, z: -269.39996}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Lamp_01
-        position: {x: 95.8, y: -2.4, z: -294.39996}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Lamp_01
-        position: {x: 95.8, y: -2.4, z: -319.89996}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Lamp_01
-        position: {x: 95.8, y: -2.4, z: -352.19998}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Lamp_01
-        position: {x: 95.8, y: -2.4, z: -379.3}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Sandbox_01
-        position: {x: -174, y: 21, z: -307}
-        rotation: {x: -0.50119406, y: 0.5011942, z: -0.49880296, w: 0.49880302}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Tree_01
-        position: {x: -149, y: -52, z: -121}
-        rotation: {x: 0.00000006657903, y: -0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-    - name: C 2
-      data:
-      - poolID: Ground
-        position: {x: 0, y: 0, z: -250}
-        rotation: {x: 0, y: 0, z: 0, w: 1}
-        scale: {x: 100, y: 1, z: 49.7702}
-      - poolID: SM_Sandbox_01
-        position: {x: -100.7, y: 54, z: -265}
-        rotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Toy_02
-        position: {x: -93.866325, y: 46.174675, z: -416.21637}
-        rotation: {x: 0.7231241, y: 0.47026992, z: -0.46746498, w: 0.19342782}
-        scale: {x: 100, y: 100, z: 100}
-      - poolID: SM_Stand_02
-        position: {x: -93.6, y: -3.3, z: -38.3}
-        rotation: {x: 0.000000019128278, y: -0.48374677, z: -0.000000010572623, w: 0.875208}
-        scale: {x: 100, y: 100, z: 100}
-      - poolID: Refrigerator_2
-        position: {x: 125.87808, y: 41.8809, z: -436.2584}
-        rotation: {x: -0.60518986, y: -0.61284506, z: -0.3615323, w: -0.3570162}
-        scale: {x: 1000, y: 1000, z: 1000}
-      - poolID: Stud Frame
-        position: {x: -167.1, y: 43.4, z: -425.8}
-        rotation: {x: 0, y: 0, z: 0, w: 1}
+      - poolID: Floor
+        position: {x: -438.8, y: 103.4, z: -241.1}
+        rotation: {x: 0, y: 0, z: -0.258819, w: 0.9659259}
+        scale: {x: 50, y: 1, z: 50}
+      - poolID: Floor
+        position: {x: 436.3, y: 109.4, z: -250}
+        rotation: {x: 0, y: 0, z: 0.2588191, w: 0.9659258}
+        scale: {x: 50, y: 1, z: 50}
+      - poolID: Kitchen_Cabinet_1
+        position: {x: 221, y: -22, z: -223}
+        rotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
         scale: {x: 40, y: 40, z: 40}
+      - poolID: BlackWall
+        position: {x: 246.9998, y: 274.5786, z: -2434.2932}
+        rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+        scale: {x: 217.07492, y: 248.97643, z: 30}
+      - poolID: Wall
+        position: {x: 765.8015, y: 282.4164, z: -12.6}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        scale: {x: 61.646053, y: 259.8026, z: 100}
       - poolID: SM_Toy_02
-        position: {x: -91.651375, y: 46.50629, z: -416.28687}
-        rotation: {x: 0.2025668, y: 0.229387, z: -0.6333396, w: 0.71079487}
+        position: {x: 224.2, y: 84.6, z: -79}
+        rotation: {x: -0.66978514, y: 0.05271324, z: 0.05811322, w: 0.7383983}
         scale: {x: 100, y: 100, z: 100}
-      - poolID: toilet1
-        position: {x: -141.1, y: 35.6, z: -379.3}
+      - poolID: SM_Toy_02
+        position: {x: 224.30112, y: 83.700775, z: -17.908031}
+        rotation: {x: -0.66972107, y: 0.053500894, z: 0.058981802, w: 0.7383309}
+        scale: {x: 100, y: 100, z: 100}
+      - poolID: BookCase_2
+        position: {x: 233.6, y: 0.1, z: -253}
         rotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
-        scale: {x: 150, y: 150, z: 150}
-      - poolID: toilet1
-        position: {x: -138.9, y: 35.6, z: -474.8}
-        rotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-        scale: {x: 150, y: 150, z: 150}
-      - poolID: SM_Archway_01
-        position: {x: -9.2, y: -1.9, z: -14.7}
-        rotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Alcove_01
-        position: {x: 148, y: -0.7, z: -446.5}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Lamp_01
-        position: {x: 95.8, y: -2.4, z: -72.59999}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Lamp_01
-        position: {x: 95.8, y: -2.4, z: -100.09999}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Lamp_01
-        position: {x: 95.8, y: -2.4, z: -125.09999}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Lamp_01
-        position: {x: 95.8, y: -2.4, z: -150.59999}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Lamp_01
-        position: {x: 95.8, y: -2.4, z: -182.9}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Lamp_01
-        position: {x: 95.8, y: -2.4, z: -210}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Lamp_01
-        position: {x: 95.8, y: -2.4, z: -241.89998}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Lamp_01
-        position: {x: 95.8, y: -2.4, z: -269.39996}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Lamp_01
-        position: {x: 95.8, y: -2.4, z: -294.39996}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Lamp_01
-        position: {x: 95.8, y: -2.4, z: -319.89996}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Lamp_01
-        position: {x: 95.8, y: -2.4, z: -352.19998}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Lamp_01
-        position: {x: 95.8, y: -2.4, z: -379.3}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Sandbox_01
-        position: {x: -174, y: 21, z: -307}
-        rotation: {x: -0.50119406, y: 0.5011942, z: -0.49880296, w: 0.49880302}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Tree_01
-        position: {x: -149, y: -52, z: -121}
-        rotation: {x: 0.00000006657903, y: -0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-  - location: PG
-    blocks:
-    - name: PG 1
-      data:
-      - poolID: Ground
-        position: {x: 0, y: 0, z: -250}
-        rotation: {x: 0, y: 0, z: 0, w: 1}
-        scale: {x: 100, y: 1, z: 49.7702}
-      - poolID: SM_Sandbox_01
-        position: {x: 166.6, y: -1.9, z: -337.6}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Toy_02
-        position: {x: 166.1, y: 15.170002, z: -263.46}
-        rotation: {x: -0.36962017, y: 0.16731937, z: -0.06785137, w: 0.91147214}
-        scale: {x: 100, y: 100, z: 100}
-      - poolID: SM_Swings_04
-        position: {x: 106.5, y: -1.3, z: -94.9}
-        rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Stand_02
-        position: {x: -93.6, y: -3.3, z: -38.3}
-        rotation: {x: 0.000000019128278, y: -0.48374677, z: -0.000000010572623, w: 0.875208}
-        scale: {x: 100, y: 100, z: 100}
-      - poolID: SM_Tree_01
-        position: {x: -143.6, y: -47, z: -143.3}
-        rotation: {x: 0.00000006657903, y: -0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Tree_01
-        position: {x: -143.6, y: -47, z: -278.5}
-        rotation: {x: 0.00000006657903, y: -0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Tree_01
-        position: {x: -143.6, y: -47, z: -429.5}
-        rotation: {x: 0.00000006657903, y: -0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
+        scale: {x: 2312.8782, y: 1500, z: 2967.3684}
+      - poolID: Queen_Bed_1
+        position: {x: 150.1, y: -0.52000046, z: -398.9}
+        rotation: {x: 0, y: -1, z: 0, w: 0}
+        scale: {x: 40, y: 30, z: 40}
       - poolID: Refrigerator_2
-        position: {x: 103.4, y: -13.6, z: -223.1}
-        rotation: {x: 0.13500723, y: 0.34072888, z: 0.8649908, w: -0.3427359}
-        scale: {x: 1000, y: 1000, z: 1000}
-      - poolID: Stud Frame
-        position: {x: 163.2, y: 23.1, z: -342.3}
-        rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-        scale: {x: 40, y: 40, z: 40}
-    - name: PG 2
-      data:
-      - poolID: Ground
-        position: {x: 0, y: 0, z: -250}
-        rotation: {x: 0, y: 0, z: 0, w: 1}
-        scale: {x: 100, y: 1, z: 49.7702}
-      - poolID: SM_Sandbox_01
-        position: {x: 166.6, y: -1.9, z: -337.6}
-        rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
+        position: {x: 114.4053, y: 0.0482, z: -30.4}
+        rotation: {x: -0, y: -0.7071068, z: -0.7071068, w: 0}
+        scale: {x: 3420.5999, y: 2743, z: 3598.8}
+      - poolID: CoffeTable_1
+        position: {x: 108.1809, y: -0.026, z: -195.0915}
+        rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+        scale: {x: 1504.1248, y: 3258.9316, z: 2304.1}
+      - poolID: Books_1_2
+        position: {x: 218.6, y: 65.5, z: -172.9}
+        rotation: {x: -0.6388048, y: -0.303197, z: -0.303197, w: 0.6388048}
+        scale: {x: 2000, y: 2000, z: -500}
       - poolID: SM_Toy_02
-        position: {x: 166.1, y: 15.170002, z: -263.46}
-        rotation: {x: -0.36962017, y: 0.16731937, z: -0.06785137, w: 0.91147214}
+        position: {x: 101.21846, y: 35.500557, z: -192.89632}
+        rotation: {x: -0.00070305157, y: -0.097870946, z: 0.022275794, w: 0.9949496}
         scale: {x: 100, y: 100, z: 100}
-      - poolID: SM_Swings_04
-        position: {x: 106.5, y: -1.3, z: -94.9}
-        rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Stand_02
-        position: {x: -93.6, y: -3.3, z: -38.3}
-        rotation: {x: 0.000000019128278, y: -0.48374677, z: -0.000000010572623, w: 0.875208}
-        scale: {x: 100, y: 100, z: 100}
-      - poolID: SM_Tree_01
-        position: {x: -143.6, y: -47, z: -143.3}
-        rotation: {x: 0.00000006657903, y: -0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Tree_01
-        position: {x: -143.6, y: -47, z: -278.5}
-        rotation: {x: 0.00000006657903, y: -0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: SM_Tree_01
-        position: {x: -143.6, y: -47, z: -429.5}
-        rotation: {x: 0.00000006657903, y: -0, z: -0, w: 1}
-        scale: {x: 50, y: 50, z: 50}
-      - poolID: Refrigerator_2
-        position: {x: 103.4, y: -13.6, z: -223.1}
-        rotation: {x: 0.13500723, y: 0.34072888, z: 0.8649908, w: -0.3427359}
-        scale: {x: 1000, y: 1000, z: 1000}
-      - poolID: Stud Frame
-        position: {x: 163.2, y: 23.1, z: -342.3}
-        rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+      - poolID: SM_Tree_03
+        position: {x: -92.2, y: -1.0999985, z: -248.6}
+        rotation: {x: -0, y: 0.7247441, z: -0, w: -0.68901825}
+        scale: {x: 30, y: 20, z: 40}
+      - poolID: SM_Tree_03
+        position: {x: -96.7, y: -1.2, z: -478.5}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        scale: {x: 40, y: 25, z: 25}
+      - poolID: SM_Game_Stairs_01
+        position: {x: -123.5, y: -2.7000008, z: -425.7}
+        rotation: {x: -0, y: -0.19063506, z: -0, w: 0.98166096}
         scale: {x: 40, y: 40, z: 40}
+      - poolID: Wall
+        position: {x: 626.0002, y: 759.4775, z: -212.4}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        scale: {x: 79.01608, y: 696.08344, z: 100}
+      - poolID: Wall
+        position: {x: -90.35339, y: 759.4775, z: -1018.4739}
+        rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+        scale: {x: 91.24706, y: 696.08344, z: 100}
+      - poolID: SM_Sandbox_01
+        position: {x: -129, y: -0.6999998, z: -320.2}
+        rotation: {x: -0, y: 0.74796313, z: -0, w: 0.66374034}
+        scale: {x: 30, y: 30, z: 30}
+      - poolID: SM_Tree_03
+        position: {x: -221.2, y: -66.2, z: -305.2}
+        rotation: {x: 0.040230256, y: -0.6294972, z: -0.11373553, w: 0.7675801}
+        scale: {x: 40, y: 20, z: 30}

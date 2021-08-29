@@ -7,78 +7,79 @@ namespace Runner.Game
     [RequireComponent(typeof(Rigidbody))]
     class PlayerAvatar : MonoBehaviour, IGameProgress
     {
+        static readonly int runStateID = Animator.StringToHash("Running");
+        static readonly int aliveStateID = Animator.StringToHash("Alive");
+
         public event Action OnDeath, OnCoinHit;
 
         [SerializeField] Animator modelAnimator;
+        [SerializeField] Transform camTransform;
+        [SerializeField] Rigidbody rig;
+        [SerializeField] float cameraMovementMultiplier = 1f;
 
-        static readonly int runStateID = Animator.StringToHash("Running");
-        static readonly int aliveStateID = Animator.StringToHash("Alive");
-        
-        float currentSpeed;
-        new Rigidbody rigidbody;
-        int currentTrackNumber; // todo: coroutine based line swap
         IPlayerInput input;
+        int currentTrack, desiredTrack;
         bool isAlive;
 
         public float Distance => transform.position.z;
+        float DesiredPositionX => (desiredTrack - Configuration.DEFAULT_TRACK_INDEX) * Configuration.TRACK_WIDTH;
 
         public IEnumerator Init() {
-            rigidbody = GetComponent<Rigidbody>();
-            input     = ServiceProvider.Get<IPlayerInput>();
+            input = ServiceProvider.Get<IPlayerInput>();
             yield return Restart();
         }
-        
+
         public IEnumerator Restart() {
-            SetSpeed(Configuration.INITIAL_SPEED);
-            rigidbody.MovePosition(Vector3.zero);
-            currentTrackNumber = Configuration.DEFAULT_TRACK_INDEX;
-            isAlive            = true;
+            currentTrack = desiredTrack = Configuration.DEFAULT_TRACK_INDEX;
+            rig.MovePosition(Vector3.zero);
+            rig.velocity                  = new Vector3(0, 0, Configuration.INITIAL_SPEED);
+            isAlive                       = true;
+            camTransform.localPosition = Vector3.zero;
             modelAnimator.SetBool(aliveStateID, true); // default state
             yield return new WaitForSeconds(1);        // this represents a delay required for initial animation
-            modelAnimator.SetBool(runStateID, true); // running state
+            modelAnimator.SetBool(runStateID, true);   // running state
         }
-        
+
         void OnCollisionEnter(Collision other) {
-            var spawned = other.gameObject.GetComponent<IObjectOnTrack>();
-            if (spawned == null) return;
-            
-            switch (spawned.GetObjectType()) {
-                case ObjectType.Coin: 
-                    OnCoinHit?.Invoke();
-                    break;
-                case ObjectType.Obstacle:
-                    Die();
-                    break;
-                default: throw new ArgumentOutOfRangeException();
+            var hit = other.gameObject.GetComponent<IObjectOnTrack>()?.GetObjectType() ?? ObjectType.None;
+            if (hit == ObjectType.Coin)
+                OnCoinHit?.Invoke();
+            else if (hit == ObjectType.Obstacle) {
+                isAlive      = false;
+                desiredTrack = currentTrack;
+                rig.velocity = Vector3.zero;
+                modelAnimator.SetBool(aliveStateID, false);
+                modelAnimator.SetBool(runStateID, false);
+                OnDeath?.Invoke();
             }
         }
 
         void FixedUpdate() {
             if (!isAlive) return;
-            
-            SetSpeed(currentSpeed + (Configuration.MAX_SPEED - currentSpeed) * Configuration.ASYMPTOTIC_SPEED_GAIN_PER_FRAME);
 
-            int inputValue = input.GetInputValue();
-            int moveToTrack = inputValue + currentTrackNumber;
-            if (moveToTrack < Configuration.LEFT_TRACK_INDEX || moveToTrack > Configuration.RIGHT_TRACK_INDEX || moveToTrack == currentTrackNumber)
-                return;
+            // slow down when close to desired X position, to prevent an overshooting
+            rig.velocity = new Vector3(Mathf.Lerp(0, Configuration.TRACK_SWITCH_SPEED * desiredTrack.CompareTo(currentTrack),
+                                                  Mathf.Abs(DesiredPositionX - rig.position.x) / Configuration.TRACK_SWITCH_SPEED * Time.fixedTime),
+                                       0,
+                                       (Configuration.MAX_SPEED - rig.velocity.z) * Configuration.ASYMPTOTIC_SPEED_GAIN_PER_FRAME);
 
-            currentTrackNumber = moveToTrack;
-            Vector3 offset = new Vector3(inputValue * Configuration.SINGLE_TRACK_WIDTH, 0);
-            rigidbody.MovePosition(rigidbody.position + offset); //todo: travel time?
+            if (currentTrack != desiredTrack) // check if switching tracks
+                camTransform.localPosition = new Vector3(transform.localPosition.x * (cameraMovementMultiplier - 1), 0);
+            else
+                CheckInputs(); // inputs are ignored until switching tracks is finished
         }
 
-        void SetSpeed(float speed) {
-            currentSpeed       = speed;
-            rigidbody.velocity = new Vector3(0, 0, currentSpeed);
+        void CheckInputs() {
+            int moveToTrack = input.GetInputValue() + currentTrack;
+            if (!(moveToTrack < Configuration.LEFT_TRACK_INDEX || moveToTrack > Configuration.RIGHT_TRACK_INDEX || moveToTrack == currentTrack))
+                StartCoroutine(SwitchTrack(moveToTrack));
         }
 
-        void Die() {
-            isAlive = false;
-            SetSpeed(0);
-            modelAnimator.SetBool(aliveStateID, false); // very dead state
-            modelAnimator.SetBool(runStateID, false);
-            OnDeath?.Invoke();
+        IEnumerator SwitchTrack(int trackIndex) {
+            desiredTrack = trackIndex;
+            while ((desiredTrack < currentTrack) ^ (DesiredPositionX > rig.position.x)) // crossing the desired X is the condition being checked
+                yield return null;
+            currentTrack = desiredTrack;
         }
     }
 }

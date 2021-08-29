@@ -7,7 +7,6 @@ namespace Runner.Game
 {
     class Game : MonoBehaviour, IGameState
     {
-        [SerializeField] ObjectPool pool;
         [SerializeField] PlayerAvatar player;
         [SerializeField] Generator locationGenerator;
         [SerializeField] UI gameUI;
@@ -20,12 +19,11 @@ namespace Runner.Game
             // Subscriptions. No unsub needed, I gonna use same objects till unloading the scene.
             gameUI.OnGameRestart += () => StartCoroutine(RestartRoutine());
             gameUI.OnExitToMenu  += () => ServiceProvider.Get<AppManager>().LoadScene(AppManager.MAIN_MENU_SCENE_NAME);
-            player.OnDeath       += OnPlayerDied;
-            player.OnCoinHit     += OnCoinCollected;
+            player.OnCoinHit     += () => SetScore(score + 1);
+            player.OnDeath       += OnPlayerDeath;
             
             // Initializing stuff and starting the game
             scores = ServiceProvider.Get<HighScores>();
-            pool.Init();
             ServiceProvider.Register(gameUI.GetComponentInChildren<IPlayerInput>());
             yield return player.Init();
             ServiceProvider.Register<IGameProgress>(player);
@@ -39,6 +37,7 @@ namespace Runner.Game
         public IEnumerator ExitRoutine() {
             ServiceProvider.Unregister<IPlayerInput>();
             ServiceProvider.Unregister<IGameProgress>();
+            ServiceProvider.Get<ObjectPool>().Clear();
             yield break;
         }
 
@@ -54,11 +53,12 @@ namespace Runner.Game
             yield return player.Restart();
         }
         
-        void OnPlayerDied() {
-            var mode = scores.SetScore(score) ? UI.Mode.NewHighScore : UI.Mode.GameOver;
+        void OnPlayerDeath() {
+            var mode = scores.SetScore(score)
+                ? UI.Mode.NewHighScore
+                : UI.Mode.GameOver;
             gameUI.SetMode(mode);
             gameUI.UpdateHighScores(score, scores.HighScore, scores.TotalScore);
         }
-        void OnCoinCollected() => SetScore(score + 1);
     }
 }

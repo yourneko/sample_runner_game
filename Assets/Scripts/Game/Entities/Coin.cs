@@ -4,23 +4,24 @@ namespace Runner.Game
 {
     class Coin : MonoBehaviour, IObjectOnTrack
     {
+        // keeping the collider on a same place while moving and rotating the mesh
         [SerializeField] Transform visuals;
-        bool isSpinning;
+        [SerializeField] Quaternion defaultRotation;
+        bool active;
 
         void OnEnable() {
-            isSpinning = true;
-            visuals.rotation = Quaternion.identity;
+            active           = true;
+            visuals.rotation = defaultRotation;
         }
 
         void Update() {
-            if (!isSpinning)
-                return;
-            visuals.Rotate(Vector3.up, Time.deltaTime * Configuration.COIN_ROTATION_DEGREES_PER_SECOND);
+            if (active)
+                visuals.Rotate(Vector3.forward, Time.deltaTime * Configuration.COIN_ROTATION_DEGREES_PER_SECOND);
         }
 
         public ObjectType GetObjectType() {
             transform.Translate(Configuration.CoinDisappearanceTranslation);
-            isSpinning = false;
+            active = false;
             return ObjectType.Coin;
         }
     }

@@ -22,8 +22,8 @@ namespace Runner.Game
                 (e = GetRandomEnumerator(configs)).MoveNext();
             return ReadObjectRow(e.Current);
         }
-        
-        ObjectType[] ReadObjectRow(int rowValue) { // not the most human-readable format, but i keep it
+
+        static ObjectType[] ReadObjectRow(int rowValue) { // not the most human-readable format, but i keep it
             int value = rowValue;
             var result = new ObjectType[Configuration.TRACK_COUNT];
             for (int i = 0; i < Configuration.TRACK_COUNT; i++) {

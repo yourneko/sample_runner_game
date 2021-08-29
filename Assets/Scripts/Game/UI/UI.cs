@@ -6,6 +6,8 @@ namespace Runner.Game
 {
     class UI : MonoBehaviour
     {
+        const string SCORE_TEXT = "Score: ";
+
         internal event Action OnGameRestart, OnExitToMenu;
         
         [SerializeField] GameObject overlayHud, gameOverMenu;
@@ -20,7 +22,7 @@ namespace Runner.Game
             newHighScoreBlock.SetActive(mode == Mode.NewHighScore);
         }
         
-        public void SetCurrentScore(int score) => hudCurrentScoreText.text = Configuration.SCORE_TEXT + score;
+        public void SetCurrentScore(int score) => hudCurrentScoreText.text = SCORE_TEXT + score;
 
         public void UpdateHighScores(int current, int high, int total) {
             bool isHighScore = current == high;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Runner.Game
 {
-    // Loads and unloads the location while player is running.
+    // Location is made of blocks which are assembled in front of a player. Elements of a location are reused (with object pool)
     class Generator : MonoBehaviour
     {
         [SerializeField] GameObject coinPrefab, blockPrefab;
@@ -20,17 +20,18 @@ namespace Runner.Game
         IGameProgress progressProvider;
         int currentBlockIndex;
         // hashes used by pool
-        int coinHash;
-        int[] obstacleHashes;
+        int coinPrefabHash;
+        int[] obstaclePrefabHashes;
 
         public void Init() {
-            objectSelector   = new ObjectSelector(Configuration.ObjectSpawnSequences);
-            blockSelector    = new BlockSelector(blocksData.data);
-            coinHash       = coinPrefab.name.GetHashCode();
-            obstacleHashes = obstaclePrefabs.Select(o => o.name.GetHashCode()).ToArray();
+            objectSelector = new ObjectSelector(Configuration.ObjectSpawnSequences);
+            blockSelector = new BlockSelector(blocksData.data);
+            coinPrefabHash = coinPrefab.name.GetHashCode();
+            obstaclePrefabHashes = obstaclePrefabs.Select(o => o.name.GetHashCode()).ToArray();
             progressProvider = ServiceProvider.Get<IGameProgress>();
 
-            pool             = ServiceProvider.Get<ObjectPool>();
+            // pre-loading prefabs to the pool, so prefabs can be requested from pool without a GameObject reference, by the hash alone
+            pool = ServiceProvider.Get<ObjectPool>();
             foreach (var t in blocksData.locationElements)
                 pool.PreloadObjects(t, 1);
             foreach (var o in obstaclePrefabs)
@@ -78,6 +79,7 @@ namespace Runner.Game
             }
         }
 
+        // Loads first few blocks
         void PreloadLocation() {
             for (int i = 0; i < Configuration.PRELOAD_ON_START_COUNT; i++)
                 GenerateNextBlock();
@@ -87,8 +89,8 @@ namespace Runner.Game
             if (obj == ObjectType.None)
                 return;
             int hash = obj == ObjectType.Coin
-                           ? coinHash
-                           : obstacleHashes[Random.Range(0, obstacleHashes.Length - 1)];
+                           ? coinPrefabHash
+                           : obstaclePrefabHashes[Random.Range(0, obstaclePrefabHashes.Length - 1)];
             block.PlaceObjectOnTracks(hash, track, line);
         }
     }

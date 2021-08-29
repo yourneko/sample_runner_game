@@ -10,11 +10,11 @@ namespace Runner.Game
         static readonly Color altColor = new Color(1, 0, 0, 0.2f);
 
         static readonly Vector3 bCenter = new Vector3(((float)Configuration.LEFT_TRACK_INDEX + Configuration.RIGHT_TRACK_INDEX) / 2, -10, MIDDLE_Z);
-        static readonly Vector3 bSize = new Vector3((Configuration.TRACK_COUNT + 2) * Configuration.SINGLE_TRACK_WIDTH, 20, Configuration.DISTANCE_BETWEEN_OBJECT_ROWS);
+        static readonly Vector3 bSize = new Vector3((Configuration.TRACK_COUNT + 2) * Configuration.TRACK_WIDTH, 20, Configuration.DISTANCE_BETWEEN_OBJECT_ROWS);
 
-        static readonly Vector3 lCenter = new Vector3(Configuration.SINGLE_TRACK_WIDTH * (Configuration.LEFT_TRACK_INDEX - Configuration.DEFAULT_TRACK_INDEX - 1), 50, MIDDLE_Z);
-        static readonly Vector3 rCenter = new Vector3(Configuration.SINGLE_TRACK_WIDTH * (Configuration.RIGHT_TRACK_INDEX - Configuration.DEFAULT_TRACK_INDEX + 1), 50, MIDDLE_Z);
-        static readonly Vector3 sideSize = new Vector3(Configuration.SINGLE_TRACK_WIDTH, 100, Configuration.DISTANCE_BETWEEN_OBJECT_ROWS);
+        static readonly Vector3 lCenter = new Vector3(Configuration.TRACK_WIDTH * (Configuration.LEFT_TRACK_INDEX - Configuration.DEFAULT_TRACK_INDEX - 1), 50, MIDDLE_Z);
+        static readonly Vector3 rCenter = new Vector3(Configuration.TRACK_WIDTH * (Configuration.RIGHT_TRACK_INDEX - Configuration.DEFAULT_TRACK_INDEX + 1), 50, MIDDLE_Z);
+        static readonly Vector3 sideSize = new Vector3(Configuration.TRACK_WIDTH, 100, Configuration.DISTANCE_BETWEEN_OBJECT_ROWS);
         
         static BlockBorder visualizedBorder;
         

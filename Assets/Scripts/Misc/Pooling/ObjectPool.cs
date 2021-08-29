@@ -7,15 +7,15 @@ namespace Runner
     // Pooling is used only for assembling location blocks from reusable parts.
     public class ObjectPool : MonoBehaviour 
     {
+        [SerializeField] Transform storedObjects;
         readonly Dictionary<int, PoolStack> stacks = new Dictionary<int, PoolStack>();
-        Transform storedObjects;
 
-        public void Init() { 
-            storedObjects = new GameObject().transform;
+        void Start() {
             storedObjects.SetParent(transform);
             storedObjects.position = Vector3.zero;
             storedObjects.gameObject.SetActive(false);
             ServiceProvider.Register(this);
+            DontDestroyOnLoad(this);
         }
 
         public void Clear() {
