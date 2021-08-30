@@ -17,6 +17,7 @@ MonoBehaviour:
   - {fileID: 113604, guid: 08a5f3a4f1a5afa47b54e6eddc350ddc, type: 3}
   - {fileID: 155586, guid: 4824839bd071a8147b3efd7538332d29, type: 3}
   - {fileID: 110040, guid: 0051796fd9b1ab54fbd13fdf8d2cd2bb, type: 3}
+  - {fileID: 8703711233796368900, guid: ec0a7c17c8a8204439d566650ba8f773, type: 3}
   - {fileID: 5548456037867278277, guid: 4a6e4d570d4fcad4493b324f17bbd452, type: 3}
   - {fileID: 5548456037867278277, guid: 48972cc1ccd5e65469abf906ff63b412, type: 3}
   - {fileID: 197442, guid: 9a8e2ad0cc8923746b7b5ef3f7c34059, type: 3}
@@ -271,19 +272,19 @@ MonoBehaviour:
         position: {x: 85.8, y: -1.4477, z: -129.8951}
         rotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
         scale: {x: 3076.5996, y: 531.15216, z: 1200.397}
-      - poolID: GoldCoin
+      - poolID: Coin
         position: {x: 118.4, y: 33.6, z: -236}
         rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
         scale: {x: 1000, y: 1000, z: 1000}
-      - poolID: GoldCoin
+      - poolID: Coin
         position: {x: 118.4, y: 36.4, z: -234.2}
         rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
         scale: {x: 1000, y: 1000, z: 1000}
-      - poolID: GoldCoin
+      - poolID: Coin
         position: {x: 119.600006, y: 39.1, z: -236}
         rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
         scale: {x: 1000, y: 1000, z: 1000}
-      - poolID: GoldCoin
+      - poolID: Coin
         position: {x: 131, y: 33.6, z: -241.09999}
         rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
         scale: {x: 1000, y: 1000, z: 1000}
@@ -533,11 +534,11 @@ MonoBehaviour:
         position: {x: 140.7, y: 29.7, z: -116.2}
         rotation: {x: -0.68127286, y: -0.18938684, z: -0.18938704, w: 0.68127275}
         scale: {x: 2000, y: 2000, z: -500}
-      - poolID: GoldCoin
+      - poolID: Coin
         position: {x: -203.4, y: 21.400002, z: -10}
         rotation: {x: 0.0376651, y: -0, z: -0, w: 0.99929047}
         scale: {x: 1000, y: 1000, z: 1000}
-      - poolID: GoldCoin
+      - poolID: Coin
         position: {x: -215.5, y: 21.4, z: -10}
         rotation: {x: 0.0376651, y: -0, z: -0, w: 0.99929047}
         scale: {x: 1000, y: 1000, z: 1000}

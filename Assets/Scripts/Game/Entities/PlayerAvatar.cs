@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace Runner.Game
 {
-    [RequireComponent(typeof(Rigidbody))]
     class PlayerAvatar : MonoBehaviour, IGameProgress
     {
         static readonly int runStateID = Animator.StringToHash("Running");
@@ -13,29 +12,35 @@ namespace Runner.Game
         public event Action OnDeath, OnCoinHit;
 
         [SerializeField] Animator modelAnimator;
-        [SerializeField] Transform camTransform;
         [SerializeField] Rigidbody rig;
+        [SerializeField] Transform camTransform;
         [SerializeField] float cameraMovementMultiplier = 1f;
+        [SerializeField] AudioSource coinAudioSource, deathAudioSource;
 
         IPlayerInput input;
         int currentTrack, desiredTrack;
+        float speedZ;
         bool isAlive;
 
-        public float Distance => transform.position.z;
+        public float Distance => rig.position.z;
         float DesiredPositionX => (desiredTrack - Configuration.DEFAULT_TRACK_INDEX) * Configuration.TRACK_WIDTH;
 
         public IEnumerator Init() {
-            input = ServiceProvider.Get<IPlayerInput>();
+            input           =  ServiceProvider.Get<IPlayerInput>();
+            rig.isKinematic =  true;
+            OnCoinHit       += coinAudioSource.Play;
+            OnDeath         += deathAudioSource.Play;
             yield return Restart();
         }
 
         public IEnumerator Restart() {
             currentTrack = desiredTrack = Configuration.DEFAULT_TRACK_INDEX;
-            rig.MovePosition(Vector3.zero);
-            rig.velocity                  = new Vector3(0, 0, Configuration.INITIAL_SPEED);
-            isAlive                       = true;
-            camTransform.localPosition = Vector3.zero;
+            isAlive      = true;
+            speedZ       = Configuration.INITIAL_SPEED;
+            rig.position = Vector3.zero;
+            camTransform.Translate(-camTransform.localPosition);
             modelAnimator.SetBool(aliveStateID, true); // default state
+
             yield return new WaitForSeconds(1);        // this represents a delay required for initial animation
             modelAnimator.SetBool(runStateID, true);   // running state
         }
@@ -46,8 +51,6 @@ namespace Runner.Game
                 OnCoinHit?.Invoke();
             else if (hit == ObjectType.Obstacle) {
                 isAlive      = false;
-                desiredTrack = currentTrack;
-                rig.velocity = Vector3.zero;
                 modelAnimator.SetBool(aliveStateID, false);
                 modelAnimator.SetBool(runStateID, false);
                 OnDeath?.Invoke();
@@ -57,27 +60,26 @@ namespace Runner.Game
         void FixedUpdate() {
             if (!isAlive) return;
 
-            // slow down when close to desired X position, to prevent an overshooting
-            rig.velocity = new Vector3(Mathf.Lerp(0, Configuration.TRACK_SWITCH_SPEED * desiredTrack.CompareTo(currentTrack),
-                                                  Mathf.Abs(DesiredPositionX - rig.position.x) / Configuration.TRACK_SWITCH_SPEED * Time.fixedTime),
-                                       0,
-                                       (Configuration.MAX_SPEED - rig.velocity.z) * Configuration.ASYMPTOTIC_SPEED_GAIN_PER_FRAME);
+            // the X component of speed ignores physics, so use of Rigidbody makes it more complicated
+            float baseSpeedX = (DesiredPositionX - rig.position.x) / Time.fixedDeltaTime;
+            float speedX     = Mathf.Min(Configuration.TRACK_SWITCH_SPEED, Mathf.Abs(baseSpeedX)) * baseSpeedX.CompareTo(0);
+            speedZ += (Configuration.MAX_SPEED - speedZ) * Configuration.ASYMPTOTIC_SPEED_GAIN_PER_FRAME;
+            rig.position += new Vector3(speedX * Time.fixedDeltaTime, 0, speedZ * Time.fixedDeltaTime);
 
-            if (currentTrack != desiredTrack) // check if switching tracks
-                camTransform.localPosition = new Vector3(transform.localPosition.x * (cameraMovementMultiplier - 1), 0);
-            else
-                CheckInputs(); // inputs are ignored until switching tracks is finished
-        }
-
-        void CheckInputs() {
-            int moveToTrack = input.GetInputValue() + currentTrack;
-            if (!(moveToTrack < Configuration.LEFT_TRACK_INDEX || moveToTrack > Configuration.RIGHT_TRACK_INDEX || moveToTrack == currentTrack))
-                StartCoroutine(SwitchTrack(moveToTrack));
+            // When switching tracks, inputs are ignored, but camera position is updated
+            if (currentTrack != desiredTrack)
+                camTransform.localPosition = new Vector3(rig.position.x * (cameraMovementMultiplier - 1), 0);
+            // Checking inputs. Camera position can't change, if tracks are not changed.
+            else {
+                int moveToTrack = input.GetInputValue() + currentTrack;
+                if (!(moveToTrack < Configuration.LEFT_TRACK_INDEX || moveToTrack > Configuration.RIGHT_TRACK_INDEX || moveToTrack == currentTrack))
+                    StartCoroutine(SwitchTrack(moveToTrack));
+            }
         }
 
         IEnumerator SwitchTrack(int trackIndex) {
             desiredTrack = trackIndex;
-            while ((desiredTrack < currentTrack) ^ (DesiredPositionX > rig.position.x)) // crossing the desired X is the condition being checked
+            while (Mathf.Abs(DesiredPositionX - rig.position.x) > 1f)
                 yield return null;
             currentTrack = desiredTrack;
         }
