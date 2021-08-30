@@ -34,7 +34,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: 0a751c0923fc3f24f952213735c8a36d, type: 3}
   - {fileID: 4303203432193477217, guid: 61155ddd984b5aa46926e5e31186b83a, type: 3}
   data:
-  - location: H
+  - tag: H
     blocks:
     - name: H 1
       data:
@@ -144,7 +144,7 @@ MonoBehaviour:
         position: {x: 89.6, y: 1, z: -218.7}
         rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
         scale: {x: 40, y: 40, z: 40}
-      - poolID: Wall_1
+      - poolID: Wall
         position: {x: 913.0793, y: 236.4111, z: -499.599}
         rotation: {x: 0, y: 0, z: 0, w: 1}
         scale: {x: 71.35446, y: 219.4576, z: 2316.6987}
@@ -200,7 +200,7 @@ MonoBehaviour:
         position: {x: 178.6, y: 7.4, z: -49.4}
         rotation: {x: -0, y: 0.072553314, z: -0, w: 0.9973645}
         scale: {x: 40, y: 40, z: 40}
-  - location: W
+  - tag: W
     blocks:
     - name: W 1
       data:

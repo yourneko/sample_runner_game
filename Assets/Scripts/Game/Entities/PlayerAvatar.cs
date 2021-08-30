@@ -8,6 +8,7 @@ namespace Runner.Game
     {
         static readonly int runStateID = Animator.StringToHash("Running");
         static readonly int aliveStateID = Animator.StringToHash("Alive");
+        static readonly Vector3 startPosition = new Vector3(0, 0, Configuration.START_POSITION_Z);
 
         public event Action OnDeath, OnCoinHit;
 
@@ -15,7 +16,8 @@ namespace Runner.Game
         [SerializeField] Rigidbody rig;
         [SerializeField] Transform camTransform;
         [SerializeField] float cameraMovementMultiplier = 1f;
-        [SerializeField] AudioSource coinAudioSource, deathAudioSource;
+        [SerializeField] AudioSource deathAudioSource;
+        [SerializeField] SoundSeriesController coinAudioSource;
 
         IPlayerInput input;
         int currentTrack, desiredTrack;
@@ -28,7 +30,7 @@ namespace Runner.Game
         public IEnumerator Init() {
             input           =  ServiceProvider.Get<IPlayerInput>();
             rig.isKinematic =  true;
-            OnCoinHit       += coinAudioSource.Play;
+            OnCoinHit       += coinAudioSource.PlaySound;
             OnDeath         += deathAudioSource.Play;
             yield return Restart();
         }
@@ -37,7 +39,7 @@ namespace Runner.Game
             currentTrack = desiredTrack = Configuration.DEFAULT_TRACK_INDEX;
             isAlive      = true;
             speedZ       = Configuration.INITIAL_SPEED;
-            rig.position = Vector3.zero;
+            rig.position = startPosition;
             camTransform.Translate(-camTransform.localPosition);
             modelAnimator.SetBool(aliveStateID, true); // default state
 
@@ -60,7 +62,6 @@ namespace Runner.Game
         void FixedUpdate() {
             if (!isAlive) return;
 
-            // the X component of speed ignores physics, so use of Rigidbody makes it more complicated
             float baseSpeedX = (DesiredPositionX - rig.position.x) / Time.fixedDeltaTime;
             float speedX     = Mathf.Min(Configuration.TRACK_SWITCH_SPEED, Mathf.Abs(baseSpeedX)) * baseSpeedX.CompareTo(0);
             speedZ += (Configuration.MAX_SPEED - speedZ) * Configuration.ASYMPTOTIC_SPEED_GAIN_PER_FRAME;

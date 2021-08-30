@@ -12,7 +12,7 @@ namespace Runner.Game
     [Serializable]
     class LocationBlocksData
     {
-        public string location;
+        public string tag;
         public CachedBlockData[] blocks;
     }
 

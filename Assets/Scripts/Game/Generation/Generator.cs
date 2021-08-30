@@ -68,7 +68,8 @@ namespace Runner.Game
             spawnedBlock.SetPosition(currentBlockIndex, block.Dispose);
             blocks.Enqueue(spawnedBlock);
 
-            foreach (var prefab in blockSelector.GetBlock())
+            var blockData = blockSelector.GetBlock();
+            foreach (var prefab in blockData.data)
                 spawnedBlock.PlaceExteriorPrefab(prefab);
 
             if (currentBlockIndex++ <= 0) return;

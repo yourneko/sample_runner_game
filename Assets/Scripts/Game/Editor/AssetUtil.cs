@@ -12,7 +12,7 @@ namespace Runner.Game
             var data = GetCachedData();
             data.locationElements = GetPrefabPaths(Configuration.BLOCK_ELEMENTS_PREFABS_PATH)
                                    .Select(AssetDatabase.LoadAssetAtPath<GameObject>).ToArray();
-            data.data = GetPrefabPaths(Configuration.LOCATION_BLOCK_PREFABS_PATH).GroupBy(GetLocationID)
+            data.data = GetPrefabPaths(Configuration.LOCATION_BLOCK_PREFABS_PATH).GroupBy(GetLocationTag)
                                                                                  .Select(GetLocationBlocksCached).ToArray();
             EditorUtility.SetDirty(data);
             AssetDatabase.SaveAssets();
@@ -30,14 +30,14 @@ namespace Runner.Game
             return result;
         }
 
-        static string GetLocationID(string path) => path.Split('/').Last().Split('.', ' ')[0];
+        static string GetLocationTag(string path) => path.Split('/').Last().Split('.', ' ')[0];
 
         static IEnumerable<string> GetPrefabPaths(string folder) => AssetDatabase.FindAssets("t:Prefab", new[] {folder})
                                                                                  .Select(AssetDatabase.GUIDToAssetPath);
 
         static LocationBlocksData GetLocationBlocksCached(IGrouping<string, string> group) =>
             new LocationBlocksData {
-                                       location = group.Key,
+                                       tag = group.Key,
                                        blocks   = group.Select(AssetDatabase.LoadAssetAtPath<GameObject>).Select(CacheChildrenData).ToArray()
                                    };
 

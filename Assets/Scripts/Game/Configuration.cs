@@ -21,6 +21,7 @@ namespace Runner.Game
         public const float UNLOAD_DISTANCE = -200f;
         public const int PRELOAD_ON_START_COUNT = (int)(PRELOAD_DISTANCE / BLOCK_LENGTH);
 
+        public const float START_POSITION_Z = -100f; // obstacles and coins may spawn at Z>0
         public const float INITIAL_SPEED = 50f;
         public const float MAX_SPEED = 200f;
         public const float ASYMPTOTIC_SPEED_GAIN_PER_FRAME = 0.0004f;
