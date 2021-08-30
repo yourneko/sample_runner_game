@@ -6,8 +6,8 @@ namespace Runner.Game
 {
     class PlayerAvatar : MonoBehaviour, IGameProgress
     {
-        static readonly int runStateID = Animator.StringToHash("Running");
-        static readonly int aliveStateID = Animator.StringToHash("Alive");
+        static readonly int runStateID = Animator.StringToHash("Run");
+        static readonly int deadStateID = Animator.StringToHash("Eat");
         static readonly Vector3 startPosition = new Vector3(0, 0, Configuration.START_POSITION_Z);
 
         public event Action OnDeath, OnCoinHit;
@@ -41,7 +41,7 @@ namespace Runner.Game
             speedZ       = Configuration.INITIAL_SPEED;
             rig.position = startPosition;
             camTransform.Translate(-camTransform.localPosition);
-            modelAnimator.SetBool(aliveStateID, true); // default state
+            modelAnimator.SetBool(deadStateID, false); // default state
 
             yield return new WaitForSeconds(1);        // this represents a delay required for initial animation
             modelAnimator.SetBool(runStateID, true);   // running state
@@ -53,7 +53,7 @@ namespace Runner.Game
                 OnCoinHit?.Invoke();
             else if (hit == ObjectType.Obstacle) {
                 isAlive      = false;
-                modelAnimator.SetBool(aliveStateID, false);
+                modelAnimator.SetBool(deadStateID, true);
                 modelAnimator.SetBool(runStateID, false);
                 OnDeath?.Invoke();
             }
